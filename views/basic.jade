@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    .row: .col-md-8.col-md-offset-3
+      .page-header
+        h2(style="color: #485d65; font-size: 18px; margin-bottom: -6px;")=sectionTitle
+        h1=title
+      if skipLinks
+        ul.list-toc
+          each skipLink in skipLinks
+            li: a(href="##{skipLink.anchor}")=skipLink.text
+    .row
+      .col-sm-8.col-md-6.col-md-offset-3
+        .content(class=standFirst ? 'has-standfirst' : null)!=content
+        each widget in widgets
+          .well
+            .well-title
+              h2=widget.getText("cv-widget.title")
+            .well-body
+              p!=widget.getStructuredText("cv-widget.content").asHtml()
+        if author
+          .faux-author(style="margin-bottom: 24px; margin-top: 24px; border-top: 1px solid #cecece; padding: 24px 0;")
+            p Written by #{author.name}, #{author.title}
+            p #{author.company} &middot; #{moment(date).format('MMMM YYYY')}
+      .col-sm-4.col-md-3
+        aside.widget-journey
+          .widget-journey-body
+            h1.widget-journey-body-title Stuff
+            ul.list-unstyled
+              li: a(href="/cvs-and-cover-letters/cover-letters") Cover letters
+              li: a(href="/cvs-and-cover-letters/how-to-write-a-cv") How to write a CV
+              li: a(href="/cvs-and-cover-letters/example-cvs") Example CVs

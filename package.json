@@ -13,6 +13,7 @@
     "jade": "~1.9.2",
     "morgan": "~1.5.3",
     "prismic.io": "^1.1.4",
-    "serve-favicon": "~2.2.1"
+    "serve-favicon": "~2.2.1",
+    "moment": "~2.10.3"
   }
 }

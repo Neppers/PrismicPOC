@@ -1,8 +1,10 @@
-/*body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.has-standfirst p:first-of-type {
+	font-size: 18px;
+	color: #053041;
 }
 
-a {
-  color: #00B7FF;
-}*/
+.faux-author {
+	margin: 24px 0;	
+	border-top: 1px solid #cecece;
+	padding: 24px 0;
+}
